@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+builder.services.AddMvc();
 
 var app = builder.Build();
 
